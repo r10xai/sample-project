@@ -8,6 +8,15 @@ A minimal Express API used as a sample project. It exposes a `/hello` JSON endpo
 
 The repo includes a `render.yaml` Blueprint that provisions a free-tier Render web service (Node 20, `npm install` / `npm start`, health check on `/health`). Click the button above, sign in to Render, and approve the Blueprint to ship.
 
+### Continuous deploy on push (optional)
+
+A GitHub Actions workflow at `.github/workflows/deploy.yml` triggers a Render redeploy on every push to `main` once you wire up the deploy hook:
+
+1. In Render, open your service → **Settings** → **Deploy Hook** → copy the URL.
+2. In GitHub, open the repo → **Settings** → **Secrets and variables** → **Actions** → **New repository secret** named `RENDER_DEPLOY_HOOK` and paste the URL.
+
+Until the secret is set, the workflow no-ops with a friendly message. CI tests run on every push regardless (`.github/workflows/ci.yml`).
+
 ## Requirements
 
 - Node.js 23.x (the project was developed against Node 23; any recent LTS Node 18+ should also work)
