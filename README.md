@@ -2,6 +2,12 @@
 
 A minimal Express API used as a sample project. It exposes a `/hello` JSON endpoint and a `/health` plain-text health check, and ships with Jest + Supertest tests.
 
+## Deploy
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/r10xai/sample-project)
+
+The repo includes a `render.yaml` Blueprint that provisions a free-tier Render web service (Node 20, `npm install` / `npm start`, health check on `/health`). Click the button above, sign in to Render, and approve the Blueprint to ship.
+
 ## Requirements
 
 - Node.js 23.x (the project was developed against Node 23; any recent LTS Node 18+ should also work)
