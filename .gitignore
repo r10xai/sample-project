@@ -1,3 +1,4 @@
 node_modules
 .env
 *.log
+api_cache_context.json
